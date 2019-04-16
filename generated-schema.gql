@@ -1,0 +1,9 @@
+type Entity {
+    type: String @mock("@ctitle")
+    name: String @mock("@cname")
+    phone: String @mock("@phone")
+    address: String @mock("@ctitle")
+    fax: String @mock("@phone")
+    email: String @mock("@email")
+    id: ID
+}

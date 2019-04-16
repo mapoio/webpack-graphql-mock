@@ -1,0 +1,24 @@
+{
+  "name": "webpack-graphql-mock",
+  "version": "0.0.1",
+  "description": "A Webpack GraphQL Mock Middleware.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapoio/webpack-graphql-mock.git"
+  },
+  "keywords": [
+    "webpack",
+    "graphql",
+    "express"
+  ],
+  "author": "mapoio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mapoio/webpack-graphql-mock/issues"
+  },
+  "homepage": "https://github.com/mapoio/webpack-graphql-mock#readme"
+}
