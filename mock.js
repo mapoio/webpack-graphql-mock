@@ -1,5 +1,5 @@
 const { ApolloServer } = require('apollo-server-express');
-const { MockList } = require('graphql-tools');
+const { MockList, makeExecutableSchema } = require('graphql-tools');
 const { get } = require('lodash');
 const { GraphQLScalarType, GraphQLList } = require('graphql');
 const Mock = require('mockjs');
@@ -153,9 +153,20 @@ const useFake = (app, schemaPath, urlPath) => {
   server.applyMiddleware({ app, path: GQLPath });
   watcher.on('change', () => {
     console.log('Reastrt GraphQL Mock Server');
-    config = getConfig(schemaPath);
-    server.restart(config);
-    console.log(`\n${chalk.green('✔')} Your GraphQL Fake API is ready to use 🚀\n`);
+    try {
+      config = getConfig(schemaPath);
+      makeExecutableSchema({
+        typeDefs: config.typeDefs,
+        resolvers: config.typeResolvers,
+        schemaDirectives: config.schemaDirectives
+      })
+      server.restart(config);
+      console.log(`\n${chalk.green('✔')} Your GraphQL Fake API is ready to use 🚀\n`);
+    } catch (error) {
+      console.log(`\n Your Graphql Reasart Error`);
+      console.error(error.message)
+      console.error(error.locations)
+    }
   });
   console.log(`\n${chalk.green('✔')} Your GraphQL Fake API is ready to use 🚀\n`);
 };

@@ -1,3 +1,5 @@
+scalar Date
+
 directive @mock(rule: String!) on FIELD_DEFINITION | FIELD
 
 enum fake__Locale {

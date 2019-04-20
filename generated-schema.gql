@@ -1,9 +1,21 @@
+"""
+root query
+"""
+type Query {
+    """hello message"""
+  hello: String!
+  """Entity"""
+  entity: Entity!
+  """Entitys"""
+  entitys: [Entity]
+}
+
 type Entity {
-    type: String @mock("@ctitle")
-    name: String @mock("@cname")
-    phone: String @mock("@phone")
-    address: String @mock("@ctitle")
-    fax: String @mock("@phone")
-    email: String @mock("@email")
+    type: String @mock(rule: "@ctitle")
+    name: String @mock(rule: "@cname")
+    phone: String @mock(rule: "@phone")
+    address: String @mock(rule: "@ctitle")
+    fax: String @mock(rule: "@phone")
+    email: String @mock(rule: "@email")
     id: ID
 }

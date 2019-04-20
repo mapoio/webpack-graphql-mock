@@ -1,6 +1,6 @@
 {
   "name": "webpack-graphql-mock",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Webpack GraphQL Mock Middleware.",
   "main": "index.js",
   "scripts": {
@@ -37,5 +37,10 @@
     "lodash": "^4.17.11",
     "mockjs": "^1.0.1-beta3",
     "type-is": "^1.6.16"
+  },
+  "devDependencies": {
+    "express": "^4.16.4",
+    "graphql-playground-middleware-express": "^1.7.12",
+    "graphql-playground-react": "^1.7.20"
   }
 }

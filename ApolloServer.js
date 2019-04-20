@@ -91,6 +91,7 @@ class ApolloMiddleware {
 
         if (prefersHTML) {
           const playgroundRenderPageOptions = {
+            cdnUrl: '//unpkg.com',
             endpoint: path,
             subscriptionEndpoint: this.apolloServer.subscriptionsPath,
             ...this.apolloServer.playgroundOptions
